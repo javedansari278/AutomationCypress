@@ -1,0 +1,8 @@
+{
+    "MyAccount_Link":"#main-nav li:nth-child(2)",
+    "Login_Lbl":"[class='u-column1 col-1']>h2",
+    "username":"#username",
+    "password":"#password",
+    "Login_btn":"[name='login']",
+    "Dashboard_Lbl":"[class='woocommerce-MyAccount-navigation'] ul li:nth-child(1) a"
+}

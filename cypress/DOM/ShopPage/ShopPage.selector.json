@@ -1,0 +1,5 @@
+{
+    "RefineBy_Lbl":"#sidebar:nth-child(2)>div[id='text-3']>h4",
+    "ShopLink":"#main-nav li:nth-child(1)"
+    
+}
