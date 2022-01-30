@@ -19,7 +19,7 @@ pipeline{
 
         stage('Test') {
         steps {
-            bat 'npm install && npm run ${Options}'
+            bat 'npm install && npm run %Options%'
         }
     }
 
