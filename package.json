@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "spec": "npx cypress run --spec **/*.spec.js",
-    "postspec": "node Test.js --continue-on-error"
+    "postspec": "node Test.js --continue-on-error",
+    "all":"npx cypress run --spec **/*.spec.js",
+    "LoginTest":"npx cypress run --spec **/MyAccount/MyAccount.spec.js"
   },
   "author": "",
   "license": "ISC",

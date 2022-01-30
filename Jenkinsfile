@@ -10,21 +10,23 @@ pipeline{
         ansiColor('xterm')
     }
 
-    stage('Build') {
-        steps {
-            echo 'Build Stage'
+    stages{
+        stage('Build') {
+            steps {
+                echo 'Build Stage'
+            }
         }
-    }
 
-     stage('Test') {
+        stage('Test') {
         steps {
             bat 'npm install && npx cypress run %Options%'
         }
     }
 
-    stage('Deploy') {
-        steps{
-            echo 'Deployment Done..'
+        stage('Deploy') {
+            steps{
+                echo 'Deployment Done..'
+            }
         }
     }
 }
