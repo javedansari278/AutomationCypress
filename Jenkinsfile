@@ -1,7 +1,7 @@
 pipeline{
 
     agent any
-    
+
     parameters {
         choice choices: ['all', 'LoginTest'], name: 'Options'
     }
@@ -26,4 +26,5 @@ pipeline{
         steps{
             echo 'Deployment Done..'
         }
+    }
 }
