@@ -12,15 +12,15 @@ pipeline{
     }
 
     stages{
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Build Stage'
+                bat 'npm install'
             }
         }
 
-        stage('Test') {
+        stage('Execute Test') {
         steps {
-            bat 'npm install && npm run %Options%'
+            bat 'npm run %Options%'
             // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
         }
     }
@@ -30,9 +30,9 @@ pipeline{
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }
         }
-        stage('Deploy') {
+        stage('Message') {
             steps{
-                echo 'Deployment Done..'
+                echo 'Execution completed'
             }
         }
     }
