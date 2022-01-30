@@ -8,6 +8,7 @@ pipeline{
 
     options {
         ansiColor('xterm')
+        ansiColor('gnome-terminal')
     }
 
     stages{
