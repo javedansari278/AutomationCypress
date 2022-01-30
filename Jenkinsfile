@@ -7,7 +7,7 @@ pipeline{
     }
 
     options {
-        ansiColor('xterm')
+        ansiColor('xterm'),
         ansiColor('gnome-terminal')
     }
 
