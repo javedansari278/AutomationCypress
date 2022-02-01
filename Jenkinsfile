@@ -41,7 +41,7 @@ pipeline{
                   step ([$class: 'CopyArtifact',
                     projectName: 'Cypress_Pipeline_2',
                     filter: "cypress/reports/index.html",
-                    target: 'C:/Archeived_Reports/1.html']);
+                    target: 'C:/Archeived_Reports/']);
               }
           }
        }
