@@ -36,9 +36,14 @@ pipeline{
             }
         }
        stage('Move Reports'){
-           steps{
-               bat 'node copyFile.js'
-           }
+          steps{
+              script {
+                  step ([$class: 'CopyArtifact',
+                    projectName: 'Cypress_Pipeline_2',
+                    filter: "cypress/reports/index.html",
+                    target: 'C:/Archeived_Reports/1.html']);
+              }
+          }
        }
     }
 }
