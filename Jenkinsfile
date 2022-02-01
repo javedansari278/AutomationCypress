@@ -8,7 +8,7 @@ pipeline{
 
     options {
         ansiColor('xterm')
-        
+        copyArtifactPermission 'Cypress_Pipeline_2'
     }
 
     stages{
@@ -25,7 +25,6 @@ pipeline{
             }
         }
     }
-
         stage('Publish Report') {
             steps {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
@@ -36,10 +35,10 @@ pipeline{
                 archiveArtifacts artifacts: 'cypress/reports/index.html', followSymlinks: false
             }
         }
-        stage('Move Reports'){
-            steps{
-                cp -r 'C:/Users/pc/.jenkins/jobs/Cypress_Pipeline_2/builds/12/archive/cypress/reports/index.html' 'C:/Reports'
-            }
-        }
+       stage('Move Reports'){
+           steps{
+               bat 'node copyFile.js'
+           }
+       }
     }
 }

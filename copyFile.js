@@ -7,6 +7,7 @@ function DateTimestampS(){
 }
 
 var src='C:/Users/pc/Documents/Cypress_workspace/cypress/reports/index.html'
-var dest = 'C:/Users/pc/Documents/Cypress_workspace/Results/'+'index_'+DateTimestampS()+'.html'
+var dest = 'C:/Archeived_Reports/'+'index_'+DateTimestampS()+'.html'
 
-fs.moveSync(src,dest,{overwrite:true})
+//fs.moveSync(src,dest,{overwrite:true})
+fs.copyFileSync(src,dest,fs.constants.COPYFILE_FICLONE)
