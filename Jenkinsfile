@@ -40,7 +40,7 @@ pipeline{
               script {
                   step ([$class: 'CopyArtifact',
                     projectName: 'Cypress_Pipeline_2',
-                    selector:"latestSavedBuild",
+                    selector:specific("latestSavedBuild"),
                     filter: "cypress/reports/index.html",
                     target: 'C:/Archeived_Reports/']);
               }
