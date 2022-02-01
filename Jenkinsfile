@@ -36,5 +36,10 @@ pipeline{
                 archiveArtifacts artifacts: 'cypress/reports/index.html', followSymlinks: false
             }
         }
+        stage('Move Reports'){
+            steps{
+                cp -r 'C:/Users/pc/.jenkins/jobs/Cypress_Pipeline_2/builds/12/archive/cypress/reports/index.html' 'C:/Reports'
+            }
+        }
     }
 }
