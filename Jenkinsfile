@@ -20,7 +20,10 @@ pipeline{
 
         stage('Execute Test') {
         steps {
-            bat 'npm run %Options%'
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+                bat 'npm run %Options%'
+            }
+            
             // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
         }
     }
