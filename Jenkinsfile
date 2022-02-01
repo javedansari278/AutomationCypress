@@ -35,7 +35,7 @@ pipeline{
                 archiveArtifacts artifacts: 'cypress/reports/index.html', followSymlinks: false
             }
         }
-        stage('Move Reports'){
+        stage('Copy Artifacts'){
             steps{
                 unarchive mapping: ['cypress/reports/index.html': 'C:/Archeived_Reports/']
             }
