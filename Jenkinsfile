@@ -46,7 +46,7 @@ pipeline{
                   step ([$class: 'CopyArtifact',
                     projectName: 'Cypress_Pipeline_2',
                     selector:specific("$BUILD_NUMBER"),
-                    filter: "cypress/reports/index.html",
+                    filter: "**/index.html",
                     target: 'C:/Archeived_Reports/$BUILD_NUMBER']);
               }
           }
