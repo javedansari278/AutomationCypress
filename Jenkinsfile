@@ -1,6 +1,3 @@
-import groovy.transform.Field
-@Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
-
 pipeline{
 
     agent any
@@ -50,7 +47,7 @@ pipeline{
                     projectName: 'Cypress_Pipeline_2',
                     selector:specific("$BUILD_NUMBER"),
                     filter: "**/index.html",
-                    target: 'C:/Archeived_Reports/$BUILD_NUMBER']/${timeStamp});
+                    target: 'C:/Archeived_Reports/$BUILD_NUMBER']);
               }
           }
        }
