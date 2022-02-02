@@ -35,21 +35,21 @@ pipeline{
                 archiveArtifacts artifacts: 'cypress/reports/index.html', followSymlinks: false
             }
         }
-        stage('Copy Artifacts'){
-            steps{
-                unarchive mapping: ['cypress/reports/index.html': 'C:/Archeived_Reports/']
-            }
-        }
-    //    stage('Move Reports'){
-    //       steps{
-    //           script {
-    //               step ([$class: 'CopyArtifact',
-    //                 projectName: 'Cypress_Pipeline_2',
-    //                 selector:specific("lastCompleted"),
-    //                 filter: "cypress/reports/index.html",
-    //                 target: 'C:/Archeived_Reports/']);
-    //           }
-    //       }
-    //    }
+        // stage('Copy Artifacts'){
+        //     steps{
+        //         unarchive mapping: ['cypress/reports/index.html': 'C:/Archeived_Reports/']
+        //     }
+        // }
+       stage('Move Reports'){
+          steps{
+              script {
+                  step ([$class: 'CopyArtifact',
+                    projectName: 'Cypress_Pipeline_2',
+                    selector:specific("$BUILD_NUMBER"),
+                    filter: "cypress/reports/index.html",
+                    target: 'C:/Archeived_Reports/$BUILD_NUMBER']);
+              }
+          }
+       }
     }
 }
