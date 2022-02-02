@@ -1,3 +1,6 @@
+import groovy.transform.Field
+@Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
+
 pipeline{
 
     agent any
@@ -40,14 +43,14 @@ pipeline{
         //         unarchive mapping: ['cypress/reports/index.html': 'C:/Archeived_Reports/']
         //     }
         // }
-       stage('Move Reports'){
+       stage('Copy Artifacts'){
           steps{
               script {
                   step ([$class: 'CopyArtifact',
                     projectName: 'Cypress_Pipeline_2',
                     selector:specific("$BUILD_NUMBER"),
                     filter: "**/index.html",
-                    target: 'C:/Archeived_Reports/$BUILD_NUMBER']);
+                    target: 'C:/Archeived_Reports/$BUILD_NUMBER']/${timeStamp});
               }
           }
        }
