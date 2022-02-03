@@ -51,5 +51,10 @@ pipeline{
               }
           }
        }
+       stage('Timestamps'){
+           steps{
+               echo "$BUILD_TIMESTAMP"
+           }
+       }
     }
 }
