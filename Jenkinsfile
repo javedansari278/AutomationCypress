@@ -32,7 +32,7 @@ pipeline{
         }
         stage('Archive Artifacts') {
             steps{
-                archiveArtifacts artifacts: 'cypress/reports/index'+$BUILD_TIMESTAMP+'.html', followSymlinks: false
+                archiveArtifacts artifacts: 'cypress/reports/index.html', followSymlinks: false
             }
         }
         // stage('Copy Artifacts'){
@@ -53,7 +53,7 @@ pipeline{
        }
        stage('Timestamps'){
            steps{
-               echo "BUILD_TIMESTAMP"
+               echo "$BUILD_TIMESTAMP"
            }
        }
     }
