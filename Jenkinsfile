@@ -7,7 +7,7 @@ pipeline{
     }
 
     options {
-        ansiColor('xterm')
+        ansiColor('gnome-terminal')
         copyArtifactPermission 'Cypress_Pipeline_Latest'
     }
 
