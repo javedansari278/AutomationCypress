@@ -8,7 +8,7 @@ pipeline{
 
     options {
         ansiColor('xterm')
-        copyArtifactPermission 'Cypress_Pipeline_2'
+        copyArtifactPermission 'Cypress_Pipeline_Latest'
     }
 
     stages{
@@ -44,7 +44,7 @@ pipeline{
           steps{
               script {
                   step ([$class: 'CopyArtifact',
-                    projectName: 'Cypress_Pipeline_2',
+                    projectName: 'Cypress_Pipeline_Latest',
                     selector:specific("$BUILD_NUMBER"),
                     filter: "**/index.html",
                     target: 'C:/Archeived_Reports/$BUILD_NUMBER']);
