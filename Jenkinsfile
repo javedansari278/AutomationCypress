@@ -20,9 +20,9 @@ pipeline{
 
         stage('Execute Test') {
         steps {
-            //catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                 bat 'npm run %Options%'
-            //}
+            }
         }
     }
         stage('Publish Report') {
