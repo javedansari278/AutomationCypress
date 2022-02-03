@@ -47,14 +47,10 @@ pipeline{
                     projectName: 'Cypress_Pipeline_Latest',
                     selector:specific("$BUILD_NUMBER"),
                     filter: "**/index.html",
-                    target: 'C:/Archeived_Reports/$BUILD_NUMBER']);
+                    target: 'C:/Archeived_Reports/$BUILD_NUMBER/$BUILD_TIMESTAMP']);
               }
           }
        }
-       stage('Timestamps'){
-           steps{
-               echo "$BUILD_TIMESTAMP"
-           }
        }
     }
 }
