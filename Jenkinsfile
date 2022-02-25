@@ -52,7 +52,7 @@ pipeline{
           steps{
               script {
                   step ([$class: 'CopyArtifact',
-                    projectName: 'Cypress_Pipeline_Latest',
+                    projectName: 'CypressTestPipeline',
                     selector:specific("$BUILD_NUMBER"),
                     filter: "**/index.html",
                     target: 'C:/Archeived_Reports/$BUILD_NUMBER/$BUILD_TIMESTAMP']);
