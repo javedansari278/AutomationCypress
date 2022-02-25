@@ -3,7 +3,7 @@ pipeline{
     agent any
 
     parameters {
-        choice choices: ['all', 'LoginTest'], name: 'Modules'
+        choice choices: ['all', 'Login'], name: 'Modules'
         choice choices: ['UAT2', 'UAT3', 'UAT4', 'QA', 'QA2'], name: 'Environment'
     }
 
