@@ -23,7 +23,7 @@ pipeline{
         steps {
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                 script{
-                    if(%Modules%=='all'){
+                    if(Modules=='all'){
                         bat 'npx cypress run'
                     }
                     else{
