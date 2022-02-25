@@ -21,7 +21,7 @@ pipeline{
 
         stage('Execute Test') {
         steps {
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+            catchError(stageResult: 'FAILURE'){
                 script{
                     if(Modules=='all'){
                         bat 'npx cypress run'
