@@ -3,8 +3,8 @@ pipeline{
     agent any
 
     parameters {
-        choice choices: ['all', 'Login'], name: 'Modules'
-        //choice choices: ['UAT2', 'UAT3', 'UAT4', 'QA', 'QA2'], name: 'Environment'
+        //choice choices: ['all', 'Login'], name: 'Modules'
+        choice choices: ['UAT2', 'UAT3', 'UAT4', 'QA', 'QA2'], name: 'Environment'
         checkboxParameter(name: 'Modules', format: 'JSON',
             pipelineSubmitContent: '{"CheckboxParameter": [{"key": "LandingPage","value": "**/LandingPage/*.spec.js"},{"key": "Login","value": "**/Login/*.spec.js"},{"key": "Shop","value": "**/ShopPage/*.spec.js"}]}', description: 'Select Modules to run')
     }
