@@ -24,21 +24,13 @@ pipeline{
         stage('Execute Test') {
         steps {
             catchError(stageResult: 'FAILURE'){
-                script{
-                    if(Modules=='all'){
-                        bat 'npx cypress run'
-                    }
-                    else{
-                        bat 'npx cypress run --spec **/%Modules%/*.spec.js'
-                    }
-                }
+                bat 'npx cypress run --spec %Modules%'
                         
             }
         }
                 
     }
         
-    
         stage('Publish Report') {
             steps {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
